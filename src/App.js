@@ -55,7 +55,9 @@ function App() {
       {
         data.map((d,i) =>{
           let{name,age,salary,bonus,status}=d;
+          let Fdata=data.filter((d,i) => d.status ===true && d.salary >= 10000);
           console.log(bonus);
+
           return(
             <tr>
               <td>{name}</td>
