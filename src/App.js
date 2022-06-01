@@ -42,6 +42,10 @@ function App() {
     },
   ]
   console.log(data);
+  let Fdata=data.filter((d,i) => d.status ===true && d.salary >= 10000);
+
+  let ans=Fdata.reduce((acc,d,i) => acc + d.salary + d.bonus ,0);
+  console.log(ans);
   return (
     <div>
       <table border="1">
@@ -50,21 +54,25 @@ function App() {
         <th>Salary</th>
         <th>Bonus</th>
         <th>Status</th>
+        <th>Total</th>
+        <th>per.Total</th>
         
 
       {
-        data.map((d,i) =>{
+        Fdata.map((d,i) =>{
           let{name,age,salary,bonus,status}=d;
-          let Fdata=data.filter((d,i) => d.status ===true && d.salary >= 10000);
           console.log(bonus);
 
           return(
-            <tr>
+            <tr key={i}>
               <td>{name}</td>
               <td>{age}</td>
               <td>{salary}</td>
               <td>{bonus}</td>
               <td>{status.toString()}</td>
+              <td>{ans}</td>
+              <td>{d.salary+d.bonus}</td>
+              {/* {i===0?<td rowSpan={4}>{ans}</td>:null} */}
             </tr>
           )
         })
