@@ -10,7 +10,7 @@ class City extends Component {
     changeCity=()=>{
         this.setState({
             CityName:'vadodara'
-        })
+        });
     }
     
     
@@ -18,7 +18,7 @@ class City extends Component {
         return (
             <div>
                <p>{this.state.CityName}</p>
-               <button onClick={()=>this.changeCity()} className="button">changeCity</button> 
+               <button onClick={()=>this.changeCity()} >changeCity</button> 
             </div>
         );
     }
