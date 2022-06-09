@@ -39,3 +39,8 @@
 .button{
   background-color: #61dafb;
 }
+.button:hover {
+  background-color: rgb(72, 11, 214);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(47, 174, 18);
+}
